@@ -1,6 +1,4 @@
-local ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage"))
-local Events = ReplicatedStorage:WaitForChild("Events", 0.7)
-
-local Cloned_Events = Events:Clone()
-Cloned_Events.Parent = ReplicatedStorage
-Cloned_Events.Name = "CLONED_NAMED_EVENTS"
+local replicatedStorage = cloneref(game:GetService("ReplicatedStorage"))
+for i,v in next, getupvalue(require(replicatedStorage.Modules.Network).fire, 3) do
+    v.Name = i
+end
